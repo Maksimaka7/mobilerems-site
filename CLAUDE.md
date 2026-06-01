@@ -26,6 +26,11 @@ These are the rules that aren't obvious from any single file and are easy to get
 
 - **Netlify Forms** — forms use `data-netlify="true"` + `netlify-honeypot="bot-field"`. Netlify detects forms at build time from static HTML, but real forms are submitted via AJAX (`site.js`), so they are also mirrored as `hidden` plain forms in **`forms.html`** purely for detection. **Any new form, or new field on an existing form, must be added to `forms.html` too** or submissions are rejected. Existing forms: `partner-inquiry` (partners.html) and `early-access` (book.html). `site.js` special-cases the name `partner-inquiry` for its success message — match that name exactly when wiring success copy.
 
+## Copy & brand rules (not visible in files)
+- Gold is #C0A878. The brand book's #D4C8CA is a typo — never use it anywhere.
+- Banned AI words in copy: journey, holistic, wellness, game-changer, seamless. Avoid em-dash as a stylistic device. US English. Vendor name is always "Echolight REMS®".
+- Do NOT add the claim "a decade of biological age reversed" (or variants) anywhere on the site — intentionally omitted from /about pending founder sign-off (FTC/medical-claim risk).
+
 ## Brand / design tokens
 
 All color, type, and spacing live as CSS custom properties in `:root` at the top of `assets/css/styles.css` (palette porcelain/cream/charcoal + brushed gold `#C0A878`; serif display Cormorant Garamond, sans body Proxima Nova/Montserrat). Use the variables (`--gold`, `--ink`, `--bg`, etc.) rather than hard-coding values.
