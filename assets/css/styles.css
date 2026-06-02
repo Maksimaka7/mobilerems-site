@@ -6,7 +6,7 @@
     --ink: #36383C;
     --text: #5C5E64;
     --muted: #8C8678;
-    --gold: #C0A878;
+    --gold: #D4B985;
     --gold-soft: #D8C9A6;
     --bronze: #9C7B33;
     --rule: #E6E1D8;
@@ -33,7 +33,7 @@
   .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 
   h1,h2,h3{ font-family: var(--serif); color: var(--ink); font-weight: 600; margin: 0; letter-spacing: -0.005em; line-height: 1.06; }
-  h1{ font-size: clamp(46px, 6vw, 82px); }
+  h1{ font-size: clamp(34px, 6vw, 82px); }
   h2{ font-size: clamp(34px, 4.4vw, 54px); }
   h3{ font-size: 23px; }
   p{ margin: 0 0 18px; }
@@ -91,6 +91,7 @@
   .nav{ display: flex; align-items: center; justify-content: space-between; height: var(--header-h); }
   .brand{ display: flex; align-items: center; gap: 12px; }
   .brand svg{ width: 30px; height: 38px; }
+  .brand img{ width: 30px; height: 38px; }
   .brand-name{ display:flex; flex-direction: column; line-height: 1; }
   .brand-name b{ font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--ink); letter-spacing: .01em; }
   .brand-name small{ font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
@@ -189,7 +190,7 @@
   .hero-float.bot{ bottom: 12%; left: -22px; }
 
   @media (max-width: 980px){
-    .hero-inner{ grid-template-columns: 1fr; gap: 44px; padding: 48px 0 64px; min-height: 0; }
+    .hero-inner{ grid-template-columns: 1fr; gap: 44px; padding: 36px 0 48px; min-height: 0; }
     .hero-media{ max-width: 420px; margin: 0 auto; width: 100%; }
     .hero-float.top{ right: 6px; } .hero-float.bot{ left: 6px; }
   }
@@ -386,7 +387,7 @@
 
   /* ============ BRAND BLOCK (about) ============ */
   .brandblock{ background: var(--cream); border-radius:16px; padding:48px; display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center; }
-  .brandblock .mark{ width:90px;height:117px;flex-shrink:0; }
+  .brandblock .mark{ width:150px;height:auto;flex-shrink:0; }
   .brandblock h3{ font-size:28px; margin:0 0 14px; }
   .brandblock p{ font-size:15.5px; color:var(--text); margin:0 0 12px; }
   @media (max-width:680px){ .brandblock{ grid-template-columns:1fr; padding:32px; gap:24px; text-align:center; } .brandblock .mark{ margin:0 auto; } }
@@ -439,5 +440,25 @@
 
 /* Ivorey / GoHighLevel embedded forms */
 .ghl-embed{display:block;width:100%;border:none;background:transparent;}
-.form-card .ghl-embed{min-height:560px;}
-.form-card.wide .ghl-embed{min-height:800px;}
+.form-card .ghl-embed{min-height:480px;}
+.form-card.wide .ghl-embed{min-height:620px;}
+
+/* proof bar (provider page hero) */
+.proof-bar{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule);font-size:13px;color:var(--charcoal);}
+.proof-bar span{display:flex;align-items:center;gap:10px;}
+.proof-bar span + span::before{content:"\00b7";color:var(--gold);margin-right:10px;}
+
+/* ============================================================
+   Mobile polish (audit). Phone-first refinements.
+   ============================================================ */
+@media (max-width:560px){
+  :root{ --gutter:20px; }
+  section.block{ padding:56px 0; }
+  .sec-head{ margin-bottom:36px; }
+  .page-hero .wrap{ padding:40px var(--gutter) 36px; }
+  .form-card, .form-card.wide{ padding:22px; }
+  .hero-float{ position:static; display:inline-block; margin:10px 8px 0 0; }
+}
+@media (max-width:480px){
+  .hero-float{ display:none; }
+}

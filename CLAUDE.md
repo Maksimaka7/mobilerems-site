@@ -26,11 +26,16 @@ These are the rules that aren't obvious from any single file and are easy to get
 
 - **Lead forms are embedded Ivorey / GoHighLevel iframes** — not our own. `book.html` embeds **Get Early Access** (`86e7Pc45jHgMd5xxlOBd`); `partners.html` embeds **Partner With Us** (`qJDn7ir2vDwOw6re8NFz`). Each iframe (`.ghl-embed`, wrapped in the existing `.form-card`) needs `https://links.ivorey.io/js/form_embed.js` loaded **once per page**, right after the `site.js` `<script>` — the script auto-resizes the iframe to fit (the inline/CSS `min-height` is only the pre-load fallback). Submissions go straight to Lesya's CRM (Ivorey/GHL); a single lead channel, no duplicates. **We no longer use Netlify Forms** — `forms.html` is removed and `site.js` has no form handler (it only does nav-shadow + the mobile drawer).
 
+- **Logo assets** — `assets/img/logo-full.svg` is the full vertical lockup (keyhole + RF waves + wordmark, ~square 192×192); used large on the About `.brandblock`. `assets/img/logo-mark.svg` is the icon only (keyhole + waves, cropped viewBox, no wordmark); used as the `<img>` inside every header `a.brand` (the header stays horizontal: mark + text). Both are gold `#D4B985`. If you regenerate either, keep the gold in sync with `--gold`.
+
+- **`/partners` is the "For Providers" page** — provider-focused (six sections: hero + proof bar, the four readings, what it does for the practice, patient groups, how it works, request-a-partnership). The hero CTA anchors to `#partner-form` on the final section. **Geography on this page only is "South Puget Sound and Greater Seattle"**; every other page keeps "Western Washington" / "Gig Harbor". It still uses the Ivorey "Partner With Us" form.
+
 ## Copy & brand rules (not visible in files)
-- Gold is #C0A878. The brand book's #D4C8CA is a typo — never use it anywhere.
+- Gold is #D4B985 (the official logo gold; the whole site was aligned to it). The prior value was #C0A878. The brand book's #D4C8CA is a typo — never use it anywhere.
 - Banned AI words in copy: journey, holistic, wellness, game-changer, seamless. Avoid em-dash as a stylistic device. US English. Vendor name is always "Echolight REMS®".
 - Do NOT add the claim "a decade of biological age reversed" (or variants) anywhere on the site — intentionally omitted from /about pending founder sign-off (FTC/medical-claim risk).
+- **Provider-page stats are unsourced.** The `/partners` proof bar and copy ("Validated against DXA in 4,300+ patients", "Sub-0.5% precision error", "FDA-cleared", "the only REMS® provider in Western Washington") are owner-approved for the current pre-advertising site but **need sources before any paid advertising** (FTC). The global `.disclaimer` must stay on the page.
 
 ## Brand / design tokens
 
-All color, type, and spacing live as CSS custom properties in `:root` at the top of `assets/css/styles.css` (palette porcelain/cream/charcoal + brushed gold `#C0A878`; serif display Cormorant Garamond, sans body Proxima Nova/Montserrat). Use the variables (`--gold`, `--ink`, `--bg`, etc.) rather than hard-coding values.
+All color, type, and spacing live as CSS custom properties in `:root` at the top of `assets/css/styles.css` (palette porcelain/cream/charcoal + logo gold `--gold: #D4B985`, was `#C0A878`; darker accent `--bronze: #9C7B33`; serif display Cormorant Garamond, sans body Proxima Nova/Montserrat). Use the variables (`--gold`, `--ink`, `--bg`, etc.) rather than hard-coding values.
