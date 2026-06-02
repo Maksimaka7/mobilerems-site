@@ -28,6 +28,8 @@ These are the rules that aren't obvious from any single file and are easy to get
 
 - **Logo assets** — `assets/img/logo-full.svg` is the full vertical lockup (keyhole + RF waves + wordmark, ~square 192×192); used large on the About `.brandblock`. `assets/img/logo-mark.svg` is the icon only (keyhole + waves, cropped viewBox, no wordmark); used as the `<img>` inside every header `a.brand` (the header stays horizontal: mark + text). Both are gold `#D4B985`. If you regenerate either, keep the gold in sync with `--gold`.
 
+- **Home hero is the founder photo** — `index.html`'s `.hero-media > .keyframe.has-photo` shows `assets/img/founder-hero.jpg` (852×1065, 4:5) clipped to the keyhole arch, with a `.hero-photo-tone` warm overlay and a gold inner-edge `inset` box-shadow. The earlier animated spine-scan SVG (`.hero-scan` / `.hs-*` classes + `@keyframes hs*`) was **removed** from both HTML and CSS — it was not moved to `/technology`; it lives in git history if ever needed.
+
 - **`/partners` is the "For Providers" page** — provider-focused (six sections: hero + proof bar, the four readings, what it does for the practice, patient groups, how it works, request-a-partnership). The hero CTA anchors to `#partner-form` on the final section. **Geography on this page only is "South Puget Sound and Greater Seattle"**; every other page keeps "Western Washington" / "Gig Harbor". It still uses the Ivorey "Partner With Us" form.
 
 ## Copy & brand rules (not visible in files)

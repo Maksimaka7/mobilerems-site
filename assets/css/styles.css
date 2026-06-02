@@ -169,6 +169,19 @@
     opacity:.05; mix-blend-mode:multiply;
   }
   .keyframe img{ width:100%; height:100%; object-fit:cover; }
+  /* founder photo hero */
+  .keyframe.has-photo{
+    box-shadow:
+      0 40px 80px -50px rgba(54,56,60,.5),
+      inset 0 0 0 1px rgba(212,185,133,.55),
+      inset 0 0 70px -24px rgba(212,185,133,.45);
+  }
+  .keyframe .hero-photo{ width:100%; height:100%; object-fit:cover; object-position:50% 42%; display:block; }
+  .hero-photo-tone{
+    position:absolute; inset:0; z-index:2; pointer-events:none;
+    background:linear-gradient(180deg, rgba(212,185,133,.05), rgba(54,56,60,.10));
+    mix-blend-mode:multiply;
+  }
   /* radiofrequency rings + keyhole watermark inside */
   .rf{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
   .rf svg{ width: 62%; opacity: .9; }
@@ -404,39 +417,6 @@
   /* page utilities */
   .lead-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
   .center-narrow{ max-width:680px; margin:0 auto; text-align:center; }
-
-/* ============================================================
-   Hero scan animation (index.html hero .keyframe)
-   Cycle: torso -> spine emerges -> zoom -> vertebra microarchitecture
-   All classes prefixed .hs- to avoid collisions. ~14s loop.
-   ============================================================ */
-.hero-scan{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.hero-scan svg{width:100%;height:100%;max-height:100%}
-@media (prefers-reduced-motion: reduce){
-  .hero-scan .hs-A,.hero-scan .hs-zoom,.hero-scan .hs-ribs,.hero-scan .hs-spine,
-  .hero-scan .hs-sweep,.hero-scan .hs-B,.hero-scan .hs-bzoom,.hero-scan .hs-trab,
-  .hero-scan .hs-bscan{animation:none!important}
-  .hero-scan .hs-B{opacity:0}
-  .hero-scan .hs-spine,.hero-scan .hs-ribs{opacity:1}
-}
-@keyframes hsAFade{0%{opacity:0}5%{opacity:1}40%{opacity:1}48%{opacity:0}100%{opacity:0}}
-@keyframes hsRibsIn{0%{opacity:0}8%{opacity:0}20%{opacity:.45}40%{opacity:.45}48%{opacity:0}100%{opacity:0}}
-@keyframes hsSpineIn{0%{opacity:0}16%{opacity:0}28%{opacity:1}40%{opacity:1}48%{opacity:0}100%{opacity:0}}
-@keyframes hsZoom{0%{transform:scale(1)}28%{transform:scale(1)}48%{transform:scale(2.6)}100%{transform:scale(2.6)}}
-@keyframes hsSweep{0%{opacity:0;transform:translateY(0)}5%{opacity:1}8%{transform:translateY(0)}38%{transform:translateY(252px);opacity:1}42%{opacity:0;transform:translateY(252px)}100%{opacity:0}}
-@keyframes hsBFade{0%{opacity:0}46%{opacity:0}56%{opacity:1}92%{opacity:1}97%{opacity:0}100%{opacity:0}}
-@keyframes hsBZoom{0%{transform:scale(.5)}46%{transform:scale(.5)}56%{transform:scale(1)}100%{transform:scale(1)}}
-@keyframes hsTrabIn{0%{opacity:0}58%{opacity:0}68%{opacity:.62}84%{opacity:.62}92%{opacity:.5}97%{opacity:0}100%{opacity:0}}
-@keyframes hsBscan{0%{opacity:0;transform:translateY(-66px)}57%{opacity:0;transform:translateY(-66px)}60%{opacity:.9}74%{transform:translateY(66px)}80%{opacity:.9}84%{opacity:0;transform:translateY(66px)}100%{opacity:0}}
-.hero-scan .hs-A{animation:hsAFade 14s ease-in-out infinite}
-.hero-scan .hs-zoom{transform-box:fill-box;transform-origin:50% 50%;animation:hsZoom 14s ease-in-out infinite}
-.hero-scan .hs-ribs{animation:hsRibsIn 14s ease-in-out infinite}
-.hero-scan .hs-spine{animation:hsSpineIn 14s ease-in-out infinite}
-.hero-scan .hs-sweep{animation:hsSweep 14s ease-in-out infinite}
-.hero-scan .hs-B{transform-box:fill-box;transform-origin:50% 50%;animation:hsBFade 14s ease-in-out infinite}
-.hero-scan .hs-bzoom{transform-box:fill-box;transform-origin:50% 50%;animation:hsBZoom 14s ease-in-out infinite}
-.hero-scan .hs-trab{animation:hsTrabIn 14s ease-in-out infinite}
-.hero-scan .hs-bscan{animation:hsBscan 14s ease-in-out infinite}
 
 /* Ivorey / GoHighLevel embedded forms */
 .ghl-embed{display:block;width:100%;border:none;background:transparent;}
