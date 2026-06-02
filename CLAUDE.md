@@ -30,6 +30,8 @@ These are the rules that aren't obvious from any single file and are easy to get
 
 - **Home hero is the founder photo** — `index.html`'s `.hero-media > .keyframe.has-photo` shows `assets/img/founder-hero.jpg` (852×1065, 4:5) clipped to the keyhole arch, with a `.hero-photo-tone` warm overlay and a gold inner-edge `inset` box-shadow. The earlier animated spine-scan SVG (`.hero-scan` / `.hs-*` classes + `@keyframes hs*`) was **removed** from both HTML and CSS — it was not moved to `/technology`; it lives in git history if ever needed.
 
+- **Brochure PDF** — the Echolight "Bone Identity" brochure lives at `/assets/clinical-brief.pdf` (canonical URL). The home "How REMS works" `.teaser` shows `assets/img/brochure-cover.jpg` as a `.brochure-cover` link (gold-framed on the cream mat) that opens the PDF in a new tab; the teaser's button is now "View the brochure" and also opens the PDF (it no longer links to `/technology` — that page is still reachable from the nav). The `.dl-cta` "Download brochure" button on `/technology` and the "Download the Clinical Brief" button on `/partners` both point to the PDF too. All brochure links use `target="_blank" rel="noopener"`. The "Book a 15-minute call" button on `/partners` stays disabled (no Calendly yet).
+
 - **`/partners` is the "For Providers" page** — provider-focused (six sections: hero + proof bar, the four readings, what it does for the practice, patient groups, how it works, request-a-partnership). The hero CTA anchors to `#partner-form` on the final section. **Geography on this page only is "South Puget Sound and Greater Seattle"**; every other page keeps "Western Washington" / "Gig Harbor". It still uses the Ivorey "Partner With Us" form.
 
 ## Copy & brand rules (not visible in files)

@@ -258,6 +258,22 @@
   .teaser .body .feat span::before{ content:""; width:5px;height:5px;border-radius:50%;background:var(--gold); }
   @media (max-width: 920px){ .teaser{ grid-template-columns: 1fr; } .teaser .media{ min-height: 240px; } .teaser .body{ padding: 40px 28px; } }
 
+  /* brochure cover (home "How REMS works" teaser) */
+  .teaser .media .brochure-cover{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    padding:34px; box-sizing:border-box; text-decoration:none;
+  }
+  .teaser .media .brochure-cover img{
+    max-width:100%; max-height:100%; width:auto; height:auto; border-radius:6px;
+    box-shadow:0 18px 40px -18px rgba(54,56,60,.55), 0 0 0 1px rgba(212,185,133,.5), 0 0 0 7px rgba(212,185,133,.16);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .teaser .media .brochure-cover:hover img{
+    transform:translateY(-3px);
+    box-shadow:0 26px 52px -20px rgba(54,56,60,.6), 0 0 0 1px rgba(212,185,133,.7), 0 0 0 7px rgba(212,185,133,.22);
+  }
+  @media (max-width:920px){ .teaser .media .brochure-cover{ padding:26px; } }
+
   /* audience teaser grid */
   .aud-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
   .aud{ border:1px solid var(--rule); border-radius: 12px; padding: 26px; background: var(--bg); transition: .2s; }
