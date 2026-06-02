@@ -436,3 +436,8 @@
 .hero-scan .hs-bzoom{transform-box:fill-box;transform-origin:50% 50%;animation:hsBZoom 14s ease-in-out infinite}
 .hero-scan .hs-trab{animation:hsTrabIn 14s ease-in-out infinite}
 .hero-scan .hs-bscan{animation:hsBscan 14s ease-in-out infinite}
+
+/* Ivorey / GoHighLevel embedded forms */
+.ghl-embed{display:block;width:100%;border:none;background:transparent;}
+.form-card .ghl-embed{min-height:560px;}
+.form-card.wide .ghl-embed{min-height:800px;}
