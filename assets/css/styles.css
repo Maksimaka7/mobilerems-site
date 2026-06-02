@@ -110,15 +110,25 @@
 
   .nav-cta{ display:flex; align-items:center; gap: 14px; }
   .nav-cta .btn{ padding: 11px 22px; }
+  /* nav Partner button shows the full label by default; short label only swaps in on small mobile */
+  .nav-cta .btn-ghost .lbl-short{ display:none; }
 
   .burger{ display:none; width: 42px; height: 42px; border:1px solid var(--rule-strong); border-radius: 8px; background: transparent; cursor: pointer; align-items:center; justify-content:center; }
   .burger span{ display:block; width: 18px; height: 1.5px; background: var(--ink); position: relative; }
   .burger span::before, .burger span::after{ content:""; position:absolute; left:0; width:18px; height:1.5px; background: var(--ink); transition: .2s; }
   .burger span::before{ top: -6px; } .burger span::after{ top: 6px; }
 
-  @media (max-width: 1000px){ .nav-links{ display:none; } }
-  @media (max-width: 1000px){ .nav-cta .btn-ghost{ display:none; } .burger{ display:flex; } }
-  @media (max-width: 600px){ .nav-cta .btn-primary{ display:none; } }
+  @media (max-width: 1000px){
+    .nav-links{ display:none; }
+    .burger{ display:flex; }
+    .nav-cta .btn-primary{ display:none; }                 /* Book a Scan moves to the drawer */
+    .nav-cta .btn-ghost{ display:inline-flex; padding:8px 14px; font-size:12.5px; white-space:nowrap; } /* Partner With Us stays, compact */
+  }
+  @media (max-width: 380px){
+    .nav-cta .btn-ghost{ padding:7px 11px; font-size:11.5px; }
+    .nav-cta .btn-ghost .lbl-full{ display:none; }         /* shorten label to "Partner" on the narrowest phones */
+    .nav-cta .btn-ghost .lbl-short{ display:inline; }
+  }
 
   /* mobile drawer */
   .drawer{
@@ -144,8 +154,8 @@
     padding: 8px 18px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
     color: var(--charcoal); font-weight: 600; margin-bottom: 30px;
   }
-  .hero-pill .live{ width: 7px; height:7px; border-radius:50%; background: var(--gold); box-shadow: 0 0 0 0 rgba(192,168,120,.6); animation: pulse 2.4s infinite; }
-  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(192,168,120,.55);} 70%{box-shadow:0 0 0 9px rgba(192,168,120,0);} 100%{box-shadow:0 0 0 0 rgba(192,168,120,0);} }
+  .hero-pill .live{ width: 7px; height:7px; border-radius:50%; background: var(--gold); box-shadow: 0 0 0 0 rgba(212,185,133,.6); animation: pulse 2.4s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(212,185,133,.55);} 70%{box-shadow:0 0 0 9px rgba(212,185,133,0);} 100%{box-shadow:0 0 0 0 rgba(212,185,133,0);} }
   .hero-pill .sep{ color: var(--rule-strong); }
   .hero-pill .soft{ text-transform: none; letter-spacing: .02em; font-weight: 500; color: var(--muted); }
 
