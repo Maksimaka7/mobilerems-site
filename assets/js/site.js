@@ -24,3 +24,14 @@
       f.replaceWith(ifr);
     });
   });
+
+  // Hide the form loading skeleton once the Ivorey iframe loads (6s fallback)
+  (function(){
+    var card = document.querySelector('.form-card.is-loading');
+    if(!card) return;
+    var ifr = card.querySelector('iframe.ghl-embed');
+    if(!ifr) return;
+    var done = function(){ card.classList.remove('is-loading'); };
+    ifr.addEventListener('load', function(){ setTimeout(done, 400); });
+    setTimeout(done, 6000); // safety net: drop the skeleton after 6s regardless
+  })();
