@@ -9,6 +9,14 @@
   to = "/technology.html"
   status = 200
 [[redirects]]
+  from = "/how-rems-works"
+  to = "/how-rems-works.html"
+  status = 200
+[[redirects]]
+  from = "/what-to-expect"
+  to = "/what-to-expect.html"
+  status = 200
+[[redirects]]
   from = "/who-its-for"
   to = "/who-its-for.html"
   status = 200

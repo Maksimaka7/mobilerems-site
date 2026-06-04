@@ -469,6 +469,29 @@
   .dl-cta .t{ font-family:var(--serif); font-size:22px; color:var(--ink); }
   .dl-cta .s{ font-size:13.5px; color:var(--muted); margin-top:4px; }
 
+  /* ============ LEARN CLUSTER ============ */
+  /* two-up "what REMS reads" (technology hub) */
+  .duo{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:14px; overflow:hidden; }
+  .duo .card{ background:var(--bg); padding:30px 26px; }
+  @media (max-width:560px){ .duo{ grid-template-columns:1fr; } }
+
+  /* numbered steps (how-rems-works) */
+  .step-list{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:14px; overflow:hidden; }
+  .step{ background:var(--bg); padding:30px 32px; display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:start; }
+  .step-n{ font-family:var(--serif); font-size:42px; color:var(--gold); line-height:1; }
+  .step-body h3{ font-size:20px; margin:0 0 10px; }
+  .step-lead{ font-size:15px; color:var(--ink); margin:0 0 16px; line-height:1.6; }
+  .step-sub{ margin:0 0 12px; font-size:14px; color:var(--text); line-height:1.6; }
+  .step-sub:last-child{ margin-bottom:0; }
+  .step-sub .lbl{ display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--bronze); font-weight:700; margin-bottom:3px; }
+  @media (max-width:600px){ .step{ grid-template-columns:1fr; gap:10px; padding:24px 22px; } .step-n{ font-size:32px; } }
+
+  /* labeled prep/during list (what-to-expect) */
+  .spec-list{ display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:14px; overflow:hidden; }
+  .spec-item{ background:var(--bg); padding:22px 26px; }
+  .spec-item .lbl{ font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--bronze); }
+  .spec-item p{ margin:7px 0 0; font-size:14.5px; color:var(--text); line-height:1.6; }
+
   /* active nav state */
   .nav-links a.active{ color: var(--ink); }
   .nav-links a.active::after{ width:100%; }
