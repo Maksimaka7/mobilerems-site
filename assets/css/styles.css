@@ -142,7 +142,7 @@
   .nav-cta{ display:flex; align-items:center; gap: 14px; }
   .nav-cta .btn{ padding: 11px 22px; }
   /* nav Partner button shows the full label by default; short label only swaps in on small mobile */
-  .nav-cta .btn-ghost .lbl-short{ display:none; }
+  .nav-cta .btn-gold .lbl-short{ display:none; }
 
   .burger{ display:none; width: 42px; height: 42px; border:1px solid var(--rule-strong); border-radius: 8px; background: transparent; cursor: pointer; align-items:center; justify-content:center; }
   .burger span{ display:block; width: 18px; height: 1.5px; background: var(--ink); position: relative; }
@@ -153,12 +153,12 @@
     .nav-links{ display:none; }
     .burger{ display:flex; }
     .nav-cta .btn-primary{ display:none; }                 /* Book a Scan moves to the drawer */
-    .nav-cta .btn-ghost{ display:inline-flex; padding:8px 14px; font-size:12.5px; white-space:nowrap; } /* Partner With Us stays, compact */
+    .nav-cta .btn-gold{ display:inline-flex; padding:8px 14px; font-size:12.5px; white-space:nowrap; } /* Partner With Us stays, compact */
   }
   @media (max-width: 380px){
-    .nav-cta .btn-ghost{ padding:7px 11px; font-size:11.5px; }
-    .nav-cta .btn-ghost .lbl-full{ display:none; }         /* shorten label to "Partner" on the narrowest phones */
-    .nav-cta .btn-ghost .lbl-short{ display:inline; }
+    .nav-cta .btn-gold{ padding:7px 11px; font-size:11.5px; }
+    .nav-cta .btn-gold .lbl-full{ display:none; }         /* shorten label to "Partner" on the narrowest phones */
+    .nav-cta .btn-gold .lbl-short{ display:inline; }
   }
 
   /* mobile drawer */
@@ -201,7 +201,7 @@
   /* keyhole media */
   .hero-media{ position: relative; aspect-ratio: 4/5; }
   .keyframe{
-    position:absolute; inset:0; border-radius: 220px 220px 18px 18px;
+    position:absolute; inset:0; border-radius: 18px;
     overflow:hidden;
     background: radial-gradient(120% 80% at 50% 12%, #F6F1E8, var(--cream) 55%, var(--cream-deep));
     border: 1px solid var(--rule);
