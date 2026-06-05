@@ -96,17 +96,48 @@
   .brand-name b{ font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--ink); letter-spacing: .01em; }
   .brand-name small{ font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); margin-top: 3px; }
 
-  .nav-links{ display: flex; gap: 34px; }
-  .nav-links a{
+  .nav-links{ display: flex; gap: 34px; align-items: center; }
+  .nav-links a,
+  .nav-links .nav-sub-trigger{
     font-size: 14px; font-weight: 500; color: var(--charcoal);
     position: relative; padding: 4px 0; transition: color .15s;
   }
-  .nav-links a::after{
+  .nav-links a::after,
+  .nav-links .nav-sub-trigger::after{
     content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px;
     background: var(--gold); transition: width .22s ease;
   }
-  .nav-links a:hover{ color: var(--ink); }
-  .nav-links a:hover::after{ width: 100%; }
+  .nav-links a:hover,
+  .nav-links .nav-sub-trigger:hover{ color: var(--ink); }
+  .nav-links a:hover::after,
+  .nav-links .nav-sub-trigger:hover::after{ width: 100%; }
+
+  /* Learn dropdown */
+  .nav-links .nav-item.has-sub{ position:relative; display:inline-flex; }
+  .nav-links .nav-sub-trigger{
+    display:inline-flex; align-items:center; gap:6px;
+    background:none; border:0; cursor:pointer; font-family:inherit; letter-spacing:inherit;
+  }
+  .nav-links .nav-sub-trigger .caret{ width:10px; height:6px; transition:transform .2s ease; }
+  .nav-item.has-sub:hover .caret,
+  .nav-item.has-sub:focus-within .caret{ transform:rotate(180deg); }
+  .nav-sub{
+    position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(6px);
+    min-width:230px; padding:10px; margin-top:10px;
+    background:var(--bg); border:1px solid var(--rule); border-radius:14px;
+    box-shadow:0 24px 50px -24px rgba(54,56,60,.35);
+    opacity:0; visibility:hidden; transition:opacity .18s ease, transform .18s ease;
+    z-index:80;
+  }
+  .nav-sub::before{ content:""; position:absolute; left:0; right:0; top:-12px; height:12px; }
+  .nav-item.has-sub:hover .nav-sub,
+  .nav-item.has-sub:focus-within .nav-sub{
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0);
+  }
+  .nav-sub a{ display:block; padding:11px 14px; border-radius:9px; font-size:13.5px; color:var(--ink); text-decoration:none; white-space:nowrap; }
+  .nav-sub a::after{ display:none; }
+  .nav-sub a:hover{ background:var(--cream); color:var(--ink); }
+  .nav-sub a.active{ color:var(--bronze); }
 
   .nav-cta{ display:flex; align-items:center; gap: 14px; }
   .nav-cta .btn{ padding: 11px 22px; }
@@ -118,7 +149,7 @@
   .burger span::before, .burger span::after{ content:""; position:absolute; left:0; width:18px; height:1.5px; background: var(--ink); transition: .2s; }
   .burger span::before{ top: -6px; } .burger span::after{ top: 6px; }
 
-  @media (max-width: 1000px){
+  @media (max-width: 1080px){
     .nav-links{ display:none; }
     .burger{ display:flex; }
     .nav-cta .btn-primary{ display:none; }                 /* Book a Scan moves to the drawer */
@@ -140,6 +171,9 @@
   .drawer-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom: 40px; }
   .drawer-close{ width:42px;height:42px;border:1px solid var(--rule-strong);border-radius:8px;background:transparent;font-size:20px;color:var(--ink);cursor:pointer; }
   .drawer a.dl{ font-family: var(--serif); font-size: 32px; color: var(--ink); padding: 14px 0; border-bottom: 1px solid var(--rule); }
+  .drawer .dl-group{ display:flex; flex-direction:column; }
+  .drawer .dl-label{ display:block; padding:14px 0 4px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--bronze); }
+  .drawer a.dl.sub{ padding-left:14px; font-size:22px; }
   .drawer .btn{ margin-top: 28px; justify-content:center; }
 
   /* ============ HERO ============ */
@@ -493,8 +527,11 @@
   .spec-item p{ margin:7px 0 0; font-size:14.5px; color:var(--text); line-height:1.6; }
 
   /* active nav state */
-  .nav-links a.active{ color: var(--ink); }
-  .nav-links a.active::after{ width:100%; }
+  .nav-links a.active,
+  .nav-links .nav-sub-trigger.active{ color: var(--ink); }
+  .nav-links a.active::after,
+  .nav-links .nav-sub-trigger.active::after{ width:100%; }
+  .nav-sub a.active::after{ display:none; }
 
   /* page utilities */
   .lead-actions{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }

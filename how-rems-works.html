@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css?v=16">
+<link rel="stylesheet" href="/assets/css/styles.css?v=17">
 </head>
 <body>
 
@@ -42,7 +42,15 @@
       <span class="brand-name"><b>MobileREMS</b><small>by Longevia</small></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="/technology" class="active">The Technology</a>
+      <a href="/technology">The Technology</a>
+      <div class="nav-item has-sub">
+        <button type="button" class="nav-sub-trigger active" aria-haspopup="true">Learn <svg class="caret" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <div class="nav-sub" role="menu" aria-label="Learn">
+          <a href="/technology" role="menuitem">REMS Technology</a>
+          <a href="/how-rems-works" class="active" role="menuitem">How REMS&reg; Works</a>
+          <a href="/what-to-expect" role="menuitem">What to Expect</a>
+        </div>
+      </div>
       <a href="/who-its-for">Who It's For</a>
       <a href="/about">About</a>
       <a href="/research">Research</a>
@@ -60,6 +68,12 @@
     <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
   </div>
   <a class="dl" href="/technology">The Technology</a>
+  <div class="dl-group">
+    <span class="dl-label">Learn</span>
+    <a class="dl sub" href="/technology">REMS Technology</a>
+    <a class="dl sub" href="/how-rems-works">How REMS&reg; Works</a>
+    <a class="dl sub" href="/what-to-expect">What to Expect</a>
+  </div>
   <a class="dl" href="/who-its-for">Who It's For</a>
   <a class="dl" href="/about">About</a>
   <a class="dl" href="/research">Research</a>
@@ -221,6 +235,6 @@
 <div class="disclaimer">
   <div class="wrap">REMS&reg; assesses bone health; it does not diagnose or treat disease. Assessment results are shared with you and, at your request, your physician. MobileREMS by Longevia is an independent mobile assessment service.</div>
 </div>
-<script src="/assets/js/site.js?v=16"></script>
+<script src="/assets/js/site.js?v=17"></script>
 </body>
 </html>
