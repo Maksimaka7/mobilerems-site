@@ -152,13 +152,12 @@
   @media (max-width: 1080px){
     .nav-links{ display:none; }
     .burger{ display:flex; }
-    .nav-cta .btn-primary{ display:none; }                 /* Book a Scan moves to the drawer */
-    .nav-cta .btn-gold{ display:inline-flex; padding:8px 14px; font-size:12.5px; white-space:nowrap; } /* Partner With Us stays, compact */
+    .nav-cta .btn-gold{ display:none; }                    /* For Providers (Partner) lives in the drawer on mobile — scoped to .nav-cta so the drawer's own buttons are untouched */
+    .nav-cta .btn-primary{ display:inline-flex; padding:8px 14px; font-size:12.5px; white-space:nowrap; } /* Book a Scan stays pinned in the header, compact */
+    .nav-cta .btn-primary .arr{ display:none; }            /* drop the arrow to save width on narrow phones */
   }
   @media (max-width: 380px){
-    .nav-cta .btn-gold{ padding:7px 11px; font-size:11.5px; }
-    .nav-cta .btn-gold .lbl-full{ display:none; }         /* shorten label to "Partner" on the narrowest phones */
-    .nav-cta .btn-gold .lbl-short{ display:inline; }
+    .nav-cta .btn-primary{ padding:7px 11px; font-size:11.5px; }
   }
 
   /* mobile drawer */
@@ -175,6 +174,7 @@
   .drawer .dl-label{ display:block; padding:14px 0 4px; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--bronze); }
   .drawer a.dl.sub{ padding-left:14px; font-size:22px; }
   .drawer .btn{ margin-top: 28px; justify-content:center; }
+  .drawer .btn + .btn{ margin-top: 12px; }   /* tighten the gap between the two stacked drawer CTAs */
 
   /* ============ HERO ============ */
   .hero{ position: relative; overflow: hidden; }
